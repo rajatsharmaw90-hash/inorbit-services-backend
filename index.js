@@ -6,7 +6,16 @@ const { Pool } = require("pg");
 
 const app = express();
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: [
+      "https://inorbitservices.ca",
+      "https://www.inorbitservices.ca",
+    ],
+  })
+);
 app.use(express.json());
 
 const pool = new Pool({
