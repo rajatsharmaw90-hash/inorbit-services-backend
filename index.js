@@ -12,8 +12,10 @@ app.use(
   cors({
     origin: [
       "https://inorbitservices.ca",
-      "https://www.inorbitservices.ca",
+      "https://www.inorbitservices.ca"
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
 app.use(express.json());
