@@ -6,16 +6,14 @@ const { Pool } = require("pg");
 
 const app = express();
 
-const cors = require("cors");
-
-app.use(cors({
+const corsOptions = {
   origin: [
     "https://inorbitservices.ca",
     "https://www.inorbitservices.ca"
   ],
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
-}));
+};
 
 // ✅ Handle preflight explicitly
 app.options("*", cors());
