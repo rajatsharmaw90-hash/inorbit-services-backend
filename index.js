@@ -8,16 +8,17 @@ const app = express();
 
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: [
-      "https://inorbitservices.ca",
-      "https://www.inorbitservices.ca"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "https://inorbitservices.ca",
+    "https://www.inorbitservices.ca"
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+// 🔥 THIS IS CRITICAL for preflight
+app.options("*", cors());
 app.use(express.json());
 
 const pool = new Pool({
