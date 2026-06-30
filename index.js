@@ -8,7 +8,7 @@ const app = express();
 
 const corsOptions = {
   origin: [
-     "http://localhost:5173",
+     "http://gardening.inorbitservices.ca",
     "https://inorbitservices.ca",
     "https://www.inorbitservices.ca"
   ],
